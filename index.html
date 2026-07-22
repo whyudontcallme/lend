@@ -11,7 +11,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a2e;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1a1a2e;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* Hero */
 .showcase-hero{background:linear-gradient(135deg,#004d4d 0%,#006666 50%,#004d4d 100%);color:#fff;padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}
@@ -31,7 +31,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .section-header p{color:#64748b;font-size:1.05rem}
 
 /* Landing cards */
-.landing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:28px;max-width:1200px;margin:0 auto;padding:0 24px}
+.landing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(350px,100%),1fr));gap:28px;max-width:1200px;margin:0 auto;padding:0 24px}
 .landing-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.06);border:1px solid #f1f5f9;transition:all .35s ease;position:relative}
 .landing-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.12)}
 .card-header{padding:28px 28px 20px;position:relative}
@@ -72,11 +72,30 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
 /* Responsive */
 @media(max-width:768px){
-  .landing-grid{grid-template-columns:1fr}
-  .hero-stats{gap:24px}
-  .card-header{padding:24px 24px 16px}
-  .card-tags{padding:0 24px 16px}
-  .card-footer{padding:14px 24px}
+  .showcase-hero{padding:60px 0 40px}
+  .showcase-hero h1{font-size:1.8rem}
+  .showcase-hero p{font-size:1rem}
+  .hero-stats{gap:20px}
+  .hero-stat .num{font-size:1.6rem}
+  .section{padding:40px 0}
+  .section-header{margin-bottom:32px}
+  .section-header h2{font-size:1.4rem}
+  .landing-grid{grid-template-columns:1fr;gap:20px;padding:0 16px}
+  .landing-card{margin:0}
+  .card-header{padding:20px 20px 16px}
+  .card-tags{padding:0 20px 16px}
+  .card-footer{padding:14px 20px}
+  .feature-grid{padding:0 16px;gap:16px}
+  .feature-item{padding:20px}
+  .tech-stack{padding:0 16px}
+  .tech-pill{font-size:.8rem;padding:8px 14px}
+  .showcase-cta{padding:40px 0}
+  .showcase-cta h2{font-size:1.3rem}
+}
+@media(max-width:480px){
+  .hero-stats{flex-direction:column;gap:16px}
+  .feature-grid{grid-template-columns:1fr}
+  .landing-grid{padding:0 12px}
 }
 </style>
 </head>
